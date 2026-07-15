@@ -1,10 +1,251 @@
-<!doctype html>
-<html lang="ko">
+from pathlib import Path
+
+html = """<!doctype html>
+
+<html lang="en">
+
 <head>
+
   <meta charset="utf-8">
-  <title>Hanburn Apps</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="HansFamily Apps creates simple, useful tools designed to make everyday life easier.">
+
+  <title>HansFamily Apps</title>
+
+  <style>
+
+    :root {
+
+      color-scheme: light dark;
+
+      --bg: #f6f7fb;
+
+      --card: rgba(255, 255, 255, 0.88);
+
+      --text: #1f2937;
+
+      --muted: #667085;
+
+      --accent: #2563eb;
+
+      --border: rgba(31, 41, 55, 0.12);
+
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: grid;
+
+      place-items: center;
+
+      padding: 32px 20px;
+
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+      background:
+
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 38%),
+
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.14), transparent 36%),
+
+        var(--bg);
+
+      color: var(--text);
+
+    }
+
+    main {
+
+      width: min(860px, 100%);
+
+    }
+
+    .card {
+
+      padding: clamp(32px, 7vw, 72px);
+
+      border: 1px solid var(--border);
+
+      border-radius: 28px;
+
+      background: var(--card);
+
+      box-shadow: var(--shadow);
+
+      backdrop-filter: blur(16px);
+
+      -webkit-backdrop-filter: blur(16px);
+
+    }
+
+    .eyebrow {
+
+      margin: 0 0 16px;
+
+      color: var(--accent);
+
+      font-size: 0.9rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+    }
+
+    h1 {
+
+      margin: 0;
+
+      font-size: clamp(3rem, 9vw, 6.5rem);
+
+      line-height: 0.95;
+
+      letter-spacing: -0.06em;
+
+    }
+
+    .lead {
+
+      max-width: 650px;
+
+      margin: 28px 0 0;
+
+      font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+
+      line-height: 1.65;
+
+      color: var(--muted);
+
+    }
+
+    .divider {
+
+      width: 72px;
+
+      height: 4px;
+
+      margin: 36px 0;
+
+      border-radius: 999px;
+
+      background: var(--accent);
+
+    }
+
+    .about {
+
+      max-width: 690px;
+
+      margin: 0;
+
+      font-size: 1.02rem;
+
+      line-height: 1.8;
+
+      color: var(--muted);
+
+    }
+
+    footer {
+
+      margin-top: 34px;
+
+      font-size: 0.92rem;
+
+      color: var(--muted);
+
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      :root {
+
+        --bg: #0b1120;
+
+        --card: rgba(15, 23, 42, 0.82);
+
+        --text: #f8fafc;
+
+        --muted: #b8c0cc;
+
+        --accent: #60a5fa;
+
+        --border: rgba(255, 255, 255, 0.10);
+
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
-  <h1>Hanburn Apps</h1>
+
+  <main>
+
+    <section class="card" aria-labelledby="page-title">
+
+      <p class="eyebrow">Independent App Developer</p>
+
+      <h1 id="page-title">HansFamily Apps</h1>
+
+      <p class="lead">
+
+        Simple tools for everyday life.
+
+      </p>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <p class="about">
+
+        HansFamily Apps is an independent app developer focused on creating
+
+        practical, reliable, and easy-to-use tools for everyone. My goal is to
+
+        build apps that solve small everyday problems, save time, and make
+
+        digital life a little more convenient.
+
+      </p>
+
+      <footer>
+
+        © 2026 HansFamily Apps. All rights reserved.
+
+      </footer>
+
+    </section>
+
+  </main>
+
 </body>
+
 </html>
+
+"""
+
+path = Path("/mnt/data/index.html")
+
+path.write_text(html, encoding="utf-8")
+
+print(path)
