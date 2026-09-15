@@ -71,4 +71,4 @@ We reserve the right to modify these Terms at any time. When updates are made, w
 
 If you have any questions or concerns regarding these Terms, please contact us at:
 
-* **Email:** hanburn@gmail.com
+* **Email:** hanburn.apps@gmail.com
